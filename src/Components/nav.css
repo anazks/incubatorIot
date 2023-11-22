@@ -1,0 +1,16 @@
+.navBar{
+    width: 90%;
+    height: 100px;
+    background-color: rgb(109, 179, 179);
+    border-radius: 30px;
+    margin: auto;
+    margin-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.navBar DIV{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
