@@ -82,7 +82,7 @@ function Display() {
       <div className="rate hearRate">
             <div>
                 <span>HEART BEAT</span> <br />
-                    <a href="http://127.0.0.1:8000/Analyse" target='_blank' className='anlyze'>Analyse Data</a>
+                    <a href="http://127.0.0.1:8000/Analyse" target='_blank' className='anlyze'>Analyse</a>
                 <h1>{ Hb ? Hb.HB.toFixed(2) :0}</h1>
             </div>
       </div>
