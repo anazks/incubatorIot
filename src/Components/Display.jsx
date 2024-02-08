@@ -21,10 +21,10 @@ function Display() {
         var distanceChanges = 0;
       dataRef.ref().child('test').on('value', (data) => {
         const getData = Object.values(data.val());
-        console.log(getData);
+        console.log(getData,"from firebase");
         setTemp(getData[2]);
         let  f = (getData[2] * (9 / 5)) + 32;
-        setTemp(parseFloat(f).toFixed(2))
+        setTemp(getData[1]);
         let currentDistance = getData[0];
         if (previousDistance !== currentDistance) {
             distanceChanges++;
@@ -70,7 +70,7 @@ function Display() {
       <div className="temp">
         <div>
             <span>TEMPERATURE IN C</span>
-            <h1>{temp} F</h1>
+            <h1>{temp} C</h1>
         </div>
       </div>
       <div className="rate">
