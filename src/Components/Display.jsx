@@ -67,16 +67,17 @@ function Display() {
 
   return (
     <div className='main'>
-      <div className="temp">
-        <div>
-            <span>TEMPERATURE IN C</span>
-            <h1>{temp} C</h1>
-        </div>
-      </div>
+      
       <div className="rate">
         <div>
             <span>RESPIRATORY RATE</span>
             <h1>{respiratory.toFixed(2)}</h1>
+        </div>
+      </div>
+      <div className="temp">
+        <div>
+            <span>Incubator TEMPERATURE IN C</span>
+            <h1>{temp} C</h1>
         </div>
       </div>
       <div className="rate hearRate">
@@ -94,8 +95,35 @@ function Display() {
                     </div>
             </div>: '' 
       }
+      <div className="temp temprature">
+        <div className="items">
+          Temprature A
+          <h2>30 <sup>o</sup>C</h2>
+
+        </div>
+        <div className="items">
+        Temprature B
+        <h2>30 <sup>o</sup>C</h2>
+
+        </div>
+        <div className="items">
+        Temprature C
+        <h2>30 <sup>o</sup>C</h2>
+
+        </div>
+        <div className="items">
+        Temprature D
+        <h2>30 <sup>o</sup>C</h2>
+
+        </div>
+ 
+      </div>
+      
+    
             
     </div>
+
+
   );
 }
 
