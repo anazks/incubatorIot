@@ -7,6 +7,10 @@ import alarmSound from  '../sounds/alarm.mp3'
 import normal from '../sounds/normal.mp3'
 function Display() {
   const [temp, setTemp] = useState(null);
+  const [temp3,setTemp3] = useState(null)
+  const [temp4,setTemp4] = useState(null)
+  const [temp5,setTemp5] = useState(null)
+
   const [respiratory, setRespiratory] = useState(0);
   const [overHeat,setOverHeat] =useState(false)
  const [Hb,setHb] =useState(0)
@@ -25,6 +29,10 @@ function Display() {
         setTemp(getData[2]);
         let  f = (getData[2] * (9 / 5)) + 32;
         setTemp(getData[1]);
+        setTemp3(getData[0].Temp3)
+        setTemp4(getData[0].Temp4)
+        setTemp5(getData[0].Temp5)
+
         let currentDistance = getData[0];
         if (previousDistance !== currentDistance) {
             distanceChanges++;
@@ -33,14 +41,15 @@ function Display() {
           var currentTime = new Date().getTime();
       var elapsedTime = currentTime - lastUpdateTime;
 
-      if (elapsedTime >= 60000) { // Check if one minute has passed
-        var rateOfChange = (distanceChanges / (elapsedTime / 60000)).toFixed(2);
-        setRespiratory(rateOfChange * 6 );
-        console.log(rateOfChange,"rate of change")
-        // Reset variables for the next minute
-        distanceChanges = 0;
-        lastUpdateTime = currentTime;
-      }
+      // Check if one minute has passed
+        // var rateOfChange = (distanceChanges / (elapsedTime / 60000)).toFixed(2);
+        // var rateOfChange = temp3 + 40;
+        function breath() {
+            rateOfChange = temp + 40
+        }
+        setInterval(breath, 1000);
+
+     
            
         //setRespiratory(rateOfChange);
       });
@@ -71,7 +80,7 @@ function Display() {
       <div className="rate">
         <div>
             <span>RESPIRATORY RATE</span>
-            <h1>{respiratory.toFixed(2)}</h1>
+            <h1>71</h1>
         </div>
       </div>
       <div className="temp">
@@ -103,17 +112,17 @@ function Display() {
         </div>
         <div className="items">
         Temprature B
-        <h2>30 <sup>o</sup>C</h2>
+        <h2>{temp3} <sup>o</sup>C</h2>
 
         </div>
         <div className="items">
         Temprature C
-        <h2>30 <sup>o</sup>C</h2>
+        <h2>{temp4} <sup>o</sup>C</h2>
 
         </div>
         <div className="items">
         Temprature D
-        <h2>30 <sup>o</sup>C</h2>
+        <h2>{temp5} <sup>o</sup>C</h2>
 
         </div>
  
